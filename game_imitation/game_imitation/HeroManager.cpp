@@ -4,7 +4,7 @@
 HeroManager::HeroManager()
 {
 	for (int i = 0; i < 25; ++i)
-		heroes.push_back(Hero("hero " + std::to_string(i+1),rand()%100+1,rand()%25+1));
+		heroes.push_back(Hero("hero" + std::to_string(i+1),rand()%100+1,rand()%25+1));
 }
 
 Hero HeroManager::create_hero()

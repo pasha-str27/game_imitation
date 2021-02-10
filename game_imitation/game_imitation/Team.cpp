@@ -22,6 +22,21 @@ void Team::set_name(std::string name)
 	this->name = name;
 }
 
+team_member& Team::operator[](int i)
+{
+	return team_members[i];
+}
+
+void Team::set_player(Player player_obj, int index)
+{
+	this->team_members[index].player_obj = player_obj;
+}
+
+void Team::set_hero(Hero hero_obj, int index)
+{
+	this->team_members[index].hero_obj = hero_obj;
+}
+
 bool operator==(Team& first, Team& other)
 {
 	for (int i = 0; i < 5; ++i)

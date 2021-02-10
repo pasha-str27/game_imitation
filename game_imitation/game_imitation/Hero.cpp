@@ -39,6 +39,7 @@ int Hero::get_damage()
 
 Hero Hero::operator=(Hero other)
 {
+	this->id = other.id;
 	this->name = other.name;
 	this->damage = other.damage;
 	this->hp = other.hp;
@@ -53,7 +54,12 @@ std::string Hero::get_info()
 //ініціалізація кількості створених об'єктів
 int Hero::counter = 0;
 
-bool operator==(Hero& first, Hero& other)
+bool operator==(Hero first, Hero other)
 {
-	return first.name == other.name&& first.damage == other.damage&& first.hp == other.hp;
+	return first.id == other.id;
+}
+
+bool operator!=(Hero first, Hero other)
+{
+	return first.id != other.id;
 }

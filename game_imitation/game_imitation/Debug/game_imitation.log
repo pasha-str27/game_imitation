@@ -1,6 +1,2 @@
-﻿  PlayerManager.cpp
-C:\Users\pasha\Desktop\git_hub\game_imitation\game_imitation\game_imitation\PlayerManager.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\pasha\Desktop\git_hub\game_imitation\game_imitation\game_imitation\PlayerManager.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\pasha\Desktop\git_hub\game_imitation\game_imitation\game_imitation\PlayerManager.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\pasha\Desktop\git_hub\game_imitation\game_imitation\game_imitation\PlayerManager.cpp(45,20): warning C4018: '<': signed/unsigned mismatch
+﻿  TeamManager.cpp
   game_imitation.vcxproj -> C:\Users\pasha\Desktop\git_hub\game_imitation\game_imitation\Debug\game_imitation.exe

@@ -43,14 +43,26 @@ std::string Player::get_info()
 
 Player Player::operator=(Player other)
 {
+	this->id = other.id;
 	this->name = other.name;
 	this->rank = other.rank;
 	return *this;
 }
 
-bool operator==(Player& first, Player& other)
+bool operator==(Player first, Player other)
 {
-	return first.name == other.name && first.rank == other.rank;
+	return first.id == other.id;
+}
+
+bool Player::operator!=(Player& other)
+{
+	return id != other.id;
+}
+
+void Player::set_data(Player player)
+{
+	this->name = player.name;
+	this->rank = player.rank;
 }
 
 //ініціалізація кількості створених об'єктів

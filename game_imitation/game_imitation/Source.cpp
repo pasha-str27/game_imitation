@@ -15,9 +15,10 @@ int main()
 	srand(time(NULL));
 	SetConsoleOutputCP(1251);
 
-	PlayerManager g;
-	g.show_player_info();
-
+	//PlayerManager g;
+	//g.show_player_info();
+	Session a(8);
+	//a.generate_new_team();
 	//GameManager game;
 	//int count;
 	//std::cout << "Кількість сесій: ";

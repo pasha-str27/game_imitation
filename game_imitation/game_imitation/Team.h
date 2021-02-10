@@ -22,5 +22,8 @@ public:
 	friend bool operator ==(Team& first, Team& other);
 	Team operator=(Team other);
 	void set_name(std::string name);
+	team_member& operator[](int i);
+	void set_player(Player player_obj, int index);
+	void set_hero(Hero hero_obj, int index);
 };
 
