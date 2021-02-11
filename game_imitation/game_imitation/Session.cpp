@@ -1,7 +1,7 @@
 #include "Session.h"
 
 //конструктор
-Session::Session(int start_time, PlayerManager& player_manager, HeroManager& hero_manager) :manag_team(player_manager,hero_manager)
+Session::Session(int start_time, PlayerManager& player_manager, HeroManager& hero_manager) :manag_team(player_manager, hero_manager)
 {
 	//запам'€товуЇмо початок гри
 	this->start_time = start_time;
@@ -15,7 +15,7 @@ Session::Session(int start_time, PlayerManager& player_manager, HeroManager& her
 
 	//формуЇмо ≥нформац≥ю про команди перед грою
 	info_start_game = manag_team.get_team_info(team_one) + "\n" + manag_team.get_team_info(team_two) + "\n";
-	
+
 	//визначаЇмо переможц€
 	calculate_winner(player_manager);
 }
@@ -24,7 +24,7 @@ Session::Session(int start_time, PlayerManager& player_manager, HeroManager& her
 void Session::calculate_winner(PlayerManager& player_manager)
 {
 	//€кщо здоров€ першоњ команди менше за урон другоњ то виграла друга команда
-	if (team_one.get_all_hp() < team_two.get_all_damage())
+	if (team_one.get_all_hp() - team_two.get_all_damage() < team_two.get_all_hp() - team_one.get_all_damage())
 	{
 		//запам'€товуЇмо переможц€
 		winner = team_two;
@@ -36,7 +36,7 @@ void Session::calculate_winner(PlayerManager& player_manager)
 		//зм≥нюЇмо рейтинг дл€ гравц≥в команди що програла
 		for (int i = 0; i < 5; ++i)
 			team_one[i].player_obj.set_rank(team_one[i].player_obj.get_rank() - 25);
-	}		
+	}
 	else//≥накше виграла перша команда
 	{
 		//запам'€товуЇмо переможц€
