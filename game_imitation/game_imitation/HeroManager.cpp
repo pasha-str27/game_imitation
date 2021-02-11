@@ -3,11 +3,11 @@
 
 HeroManager::HeroManager()
 {
-	for (int i = 0; i < 25; ++i)
-		heroes.push_back(Hero("hero" + std::to_string(i+1),rand()%100+1,rand()%25+1));
+	for (int i = 0; i < 10; ++i)
+		heroes.push_back(Hero("hero" + std::to_string(i),rand()%100+1,rand()%100+1));
 }
 
-Hero HeroManager::create_hero()
+Hero& HeroManager::create_hero()
 {
 	return heroes[rand()%heroes.size()];
 }
@@ -41,4 +41,9 @@ void HeroManager::show_hero_info()
 {
 	for (int i = 0; i < heroes.size(); ++i)
 		std::cout << heroes[i].get_info() << std::endl;
+}
+
+HeroManager::~HeroManager()
+{
+	heroes.clear();
 }

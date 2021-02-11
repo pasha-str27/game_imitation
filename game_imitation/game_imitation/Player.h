@@ -21,9 +21,9 @@ public:
 	std::string get_name();
 	int get_rank();
 	void set_rank(int rank);
-	friend bool operator ==(Player first, Player other);
+	friend bool operator ==(Player& first, Player& other);
 	bool operator !=(Player& other);
-	Player operator=(Player other);
+	//Player operator=(Player other);
 	std::string get_info();
-	void set_data(Player player);
+	void set_data(Player& player);
 };

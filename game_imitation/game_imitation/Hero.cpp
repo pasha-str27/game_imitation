@@ -37,14 +37,22 @@ int Hero::get_damage()
 	return this->damage;
 }
 
-Hero Hero::operator=(Hero other)
+void Hero::set_data(Hero& other)
 {
 	this->id = other.id;
+	this->hp = other.hp;
 	this->name = other.name;
 	this->damage = other.damage;
-	this->hp = other.hp;
-	return *this;
 }
+
+//Hero Hero::operator=(Hero other)
+//{
+//	this->id = other.id;
+//	this->name = other.name;
+//	this->damage = other.damage;
+//	this->hp = other.hp;
+//	return *this;
+//}
 
 std::string Hero::get_info()
 {
@@ -54,12 +62,12 @@ std::string Hero::get_info()
 //ініціалізація кількості створених об'єктів
 int Hero::counter = 0;
 
-bool operator==(Hero first, Hero other)
+bool operator==(Hero& first, Hero& other)
 {
 	return first.id == other.id;
 }
 
-bool operator!=(Hero first, Hero other)
+bool operator!=(Hero& first, Hero& other)
 {
 	return first.id != other.id;
 }

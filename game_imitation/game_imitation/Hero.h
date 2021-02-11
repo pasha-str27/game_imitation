@@ -22,9 +22,10 @@ public:
 	std::string get_name();
 	int get_hp();
 	int get_damage();
-	friend bool operator ==(Hero first, Hero other);
-	friend bool operator !=(Hero first, Hero other);
-	Hero operator=(Hero other);
+	void set_data(Hero& other);
+	friend bool operator ==(Hero& first, Hero& other);
+	friend bool operator !=(Hero& first, Hero& other);
+	//Hero operator=(Hero other);
 	std::string get_info();
 };
 

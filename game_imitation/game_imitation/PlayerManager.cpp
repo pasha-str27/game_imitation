@@ -5,11 +5,12 @@
 
 PlayerManager::PlayerManager()
 {
-	for (int i = 0; i < 25; ++i)
-		players.push_back(Player("player"+std::to_string(i+1), 0));
+	//std::cout << "конструктор" << "\n";
+	for (int i = 0; i <10; ++i)
+		players.push_back(Player("player"+std::to_string(i), 0));
 }
 
-Player PlayerManager::create_player()
+Player& PlayerManager::create_player()
 {
 	return players[rand() % players.size()];
 }
@@ -30,7 +31,7 @@ Player* PlayerManager::get_player_by_id(int id)
 	return nullptr;
 }
 
-void PlayerManager::delete_player(Player player)
+void PlayerManager::delete_player(Player& player)
 {
 	for (int i = 0; i < players.size(); ++i)
 		if (players[i] == player)
@@ -44,4 +45,17 @@ void PlayerManager::show_player_info()
 {
 	for (int i = 0; i < players.size(); ++i)
 		std::cout << players[i].get_info() << std::endl;
+}
+
+//PlayerManager PlayerManager::operator=(PlayerManager& other)
+//{
+//	for (int i = 0; i < other.players.size(); ++i)
+//		this->players.push_back(other.players[i]);
+//	return *this;
+//}
+
+PlayerManager::~PlayerManager()
+{
+	//std::cout << 555<<std::endl;
+	players.clear();
 }

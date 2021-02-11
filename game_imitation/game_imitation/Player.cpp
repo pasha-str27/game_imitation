@@ -41,15 +41,15 @@ std::string Player::get_info()
 	return std::to_string(id)+"\t"+name+"\t"+std::to_string(rank);
 }
 
-Player Player::operator=(Player other)
-{
-	this->id = other.id;
-	this->name = other.name;
-	this->rank = other.rank;
-	return *this;
-}
+//Player Player::operator=(Player other)
+//{
+//	this->id = other.id;
+//	this->name = other.name;
+//	this->rank = other.rank;
+//	return *this;
+//}
 
-bool operator==(Player first, Player other)
+bool operator==(Player& first, Player& other)
 {
 	return first.id == other.id;
 }
@@ -59,8 +59,9 @@ bool Player::operator!=(Player& other)
 	return id != other.id;
 }
 
-void Player::set_data(Player player)
+void Player::set_data(Player& player)
 {
+	this->id = player.id;
 	this->name = player.name;
 	this->rank = player.rank;
 }
